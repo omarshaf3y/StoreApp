@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:store_app/widgets/custom_button.dart';
 import 'package:store_app/widgets/custom_textfield.dart';
 
+// ignore: must_be_immutable
 class UpdateProductPage extends StatelessWidget {
   UpdateProductPage({super.key});
   static String id = 'update product';
@@ -26,7 +27,7 @@ class UpdateProductPage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            CustomFormTextField(
+            CustomTextField(
               onChanged: (data) {
                 productName = data;
               },
@@ -35,19 +36,28 @@ class UpdateProductPage extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            CustomFormTextField(
+            CustomTextField(
+              onChanged: (data) {
+                desc = data;
+              },
               hintText: 'Description',
             ),
             const SizedBox(
               height: 10,
             ),
-            CustomFormTextField(
+            CustomTextField(
+              onChanged: (data) {
+                price = int.parse(data);
+              },
               hintText: 'Price',
             ),
             const SizedBox(
               height: 10,
             ),
-            CustomFormTextField(
+            CustomTextField(
+              onChanged: (data) {
+                image = data;
+              },
               hintText: 'Image',
             ),
             const SizedBox(
