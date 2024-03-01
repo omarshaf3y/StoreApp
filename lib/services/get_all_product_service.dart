@@ -1,20 +1,20 @@
 import 'package:store_app/helper/api.dart';
 import 'package:store_app/models/product_model.dart';
 
-class GetAllProducts {
-  Future<List<ProductModel>> getAllProducts() async {
+class AllProductService {
+  Future<List<ProductModel>> getAllProduct() async {
+    Api api = Api();
     List<dynamic> data =
-        await Api().get(url: 'https://fakestoreapi.com/products');
-    //* StatusCode:- Type Of Request
-    //* 200 => Success request
-    //* 400 => client error
-    //* 500 => Server Error
-    List<ProductModel> productsList = [];
+        // ignore: missing_required_param
+        await api.get(url: 'https://fakestoreapi.com/products');
+
+    List<ProductModel> products = [];
     for (int i = 0; i < data.length; i++) {
-      productsList.add(
+      products.add(
         ProductModel.fromJson(data[i]),
       );
     }
-    return productsList;
+
+    return products;
   }
 }

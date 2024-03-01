@@ -1,7 +1,7 @@
 class ProductModel {
-  final int id;
-  final String title;
-  final double price;
+  final dynamic id;
+  final dynamic title;
+  final dynamic price;
   final String description;
   final String image;
   final RatingModel rating;
