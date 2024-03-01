@@ -25,6 +25,8 @@ class ProductModel {
       ),
     );
   }
+
+  get category => null;
 }
 
 class RatingModel {
